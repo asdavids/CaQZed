@@ -50,13 +50,13 @@ export const CALCULATORS: CalculatorMeta[] = [
   // --- Business ---
   { slug: "vat", name: "VAT Calculator", shortDescription: "Add or remove 16% VAT from any amount.", category: "business", status: "live" },
   { slug: "profit-margin", name: "Profit Margin Calculator", shortDescription: "Margin, markup and selling price.", category: "business", status: "soon" },
-  { slug: "turnover-tax", name: "Turnover Tax Calculator", shortDescription: "5% turnover tax for small businesses.", category: "business", status: "soon" },
+  { slug: "turnover-tax", name: "Turnover Tax Calculator", shortDescription: "5% turnover tax for small businesses.", category: "business", status: "live" },
   { slug: "corporate-tax", name: "Corporate Tax Calculator", shortDescription: "Company income tax estimate.", category: "business", status: "soon" },
   { slug: "break-even", name: "Break-even Calculator", shortDescription: "Units needed to cover fixed costs.", category: "business", status: "soon" },
 
   // --- Banking & Loans ---
   { slug: "loan", name: "Loan Repayment Calculator", shortDescription: "Monthly instalments and total interest.", category: "banking-loans", status: "live" },
-  { slug: "mortgage", name: "Mortgage Calculator", shortDescription: "Home loan repayments over time.", category: "banking-loans", status: "soon" },
+  { slug: "mortgage", name: "Mortgage Calculator", shortDescription: "Home loan repayments over time.", category: "banking-loans", status: "live" },
   { slug: "compound-interest", name: "Compound Interest Calculator", shortDescription: "Growth of savings or investments over time.", category: "banking-loans", status: "soon" },
   { slug: "fixed-deposit", name: "Fixed Deposit Calculator", shortDescription: "Maturity value of a fixed deposit.", category: "banking-loans", status: "soon" },
   { slug: "loan-affordability", name: "Loan Affordability Calculator", shortDescription: "How much you can safely borrow.", category: "banking-loans", status: "soon" },
@@ -67,7 +67,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "inflation", name: "Inflation Calculator", shortDescription: "What your money is really worth over time.", category: "investments", status: "soon" },
 
   // --- Utilities ---
-  { slug: "zesco-bill", name: "ZESCO Bill Estimator", shortDescription: "Estimate your monthly electricity bill.", category: "utilities", status: "soon" },
+  { slug: "zesco-bill", name: "ZESCO Bill Estimator", shortDescription: "Estimate your monthly electricity bill.", category: "utilities", status: "live" },
   { slug: "fuel-cost", name: "Fuel Cost Calculator", shortDescription: "Trip fuel cost based on distance and consumption.", category: "utilities", status: "soon" },
   { slug: "water-bill", name: "Water Bill Calculator", shortDescription: "Estimate your household water bill.", category: "utilities", status: "soon" },
 

@@ -52,8 +52,65 @@ export const SKILLS_LEVY_RATE = 0.005;
 // ---------------------------------------------------------------------------
 export const VAT_RATE = 0.16;
 
+// ---------------------------------------------------------------------------
+// ZESCO — residential prepaid electricity tariff bands
+// Source: Energy Regulation Board (ERB) approved tariff reduction — top band
+// cut from K6.39 to K3.45/kWh, first 200 units held flat to protect lifeline
+// customers, effective through 31 October 2026.
+// ---------------------------------------------------------------------------
+export const ZESCO_RESIDENTIAL_BANDS = [
+  { upTo: 100, rate: 0.35 },
+  { upTo: 200, rate: 1.0 },
+  { upTo: 400, rate: 2.42 },
+  { upTo: Infinity, rate: 3.45 },
+] as const;
+
+export function calculateZescoBill(units: number): {
+  total: number;
+  breakdown: { band: string; units: number; rate: number; cost: number }[];
+} {
+  let remaining = Math.max(0, units);
+  let lowerBound = 0;
+  let total = 0;
+  const breakdown: { band: string; units: number; rate: number; cost: number }[] = [];
+
+  for (const band of ZESCO_RESIDENTIAL_BANDS) {
+    if (remaining <= 0) break;
+    const bandWidth = band.upTo - lowerBound;
+    const bandUnits = Math.min(remaining, bandWidth);
+    const cost = bandUnits * band.rate;
+    if (bandUnits > 0) {
+      breakdown.push({
+        band:
+          band.upTo === Infinity
+            ? `Above ${lowerBound} units`
+            : `${lowerBound + 1} – ${band.upTo} units`,
+        units: bandUnits,
+        rate: band.rate,
+        cost,
+      });
+    }
+    total += cost;
+    remaining -= bandUnits;
+    lowerBound = band.upTo;
+  }
+
+  return { total, breakdown };
+}
+
+// ---------------------------------------------------------------------------
+// Turnover Tax — simplified regime for small businesses
+// Source: PwC Worldwide Tax Summaries, "Zambia — Corporate — Other taxes".
+// 5% of turnover for businesses with annual turnover not exceeding ZMW 5m,
+// effective 1 January 2025. Excludes interest, dividends, royalties,
+// consultancy income and mining income.
+// ---------------------------------------------------------------------------
+export const TURNOVER_TAX_RATE = 0.05;
+export const TURNOVER_TAX_THRESHOLD_ANNUAL = 5_000_000;
+
 /** Calculate PAYE on a given monthly taxable income using the 2026 bands. */
 export function calculatePAYE(monthlyIncome: number): {
+
   tax: number;
   breakdown: { band: string; taxedAmount: number; rate: number; tax: number }[];
 } {
