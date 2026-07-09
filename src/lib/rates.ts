@@ -150,3 +150,34 @@ export function calculateNAPSA(grossSalary: number): number {
 export function calculateNHIMA(grossSalary: number): number {
   return grossSalary * NHIMA_RATE;
 }
+
+export function netFromGross(gross: number): number {
+  const { tax } = calculatePAYE(gross);
+  return gross - tax - calculateNAPSA(gross) - calculateNHIMA(gross);
+}
+
+/**
+ * Reverse-solve gross salary from a target net (take-home) salary using
+ * binary search. Net pay is a monotonically increasing function of gross
+ * pay, so binary search converges reliably even though PAYE is a
+ * piecewise/progressive function with no simple inverse.
+ */
+export function solveGrossForNet(targetNet: number): number {
+  if (targetNet <= 0) return 0;
+  let low = 0;
+  let high = Math.max(targetNet * 3, 100_000);
+  // Ensure the upper bound actually brackets the target.
+  while (netFromGross(high) < targetNet && high < 100_000_000) {
+    high *= 2;
+  }
+  for (let i = 0; i < 60; i++) {
+    const mid = (low + high) / 2;
+    if (netFromGross(mid) < targetNet) {
+      low = mid;
+    } else {
+      high = mid;
+    }
+  }
+  return (low + high) / 2;
+}
+
