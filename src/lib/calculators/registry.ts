@@ -75,8 +75,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "mobile-money-fees", name: "Mobile Money Fees Calculator", shortDescription: "Compare Airtel Money, MTN MoMo and Zamtel fees.", category: "mobile-money", status: "soon" },
 
   // --- Vehicles ---
-  { slug: "import-duty", name: "Vehicle Import Duty Calculator", shortDescription: "Customs and excise duty on imported vehicles.", category: "vehicles", status: "soon" },
-  { slug: "road-tax", name: "Road Tax Calculator", shortDescription: "Annual road tax by vehicle type.", category: "vehicles", status: "soon" },
+  { slug: "import-duty", name: "Vehicle Import Duty Calculator", shortDescription: "Customs and excise duty on imported vehicles.", category: "vehicles", status: "live" },
+  { slug: "road-tax", name: "Road Tax Calculator", shortDescription: "Annual road tax by vehicle type.", category: "vehicles", status: "live" },
+  { slug: "running-costs", name: "Running Costs Calculator", shortDescription: "Monthly cost of fuel, road tax, insurance and maintenance.", category: "vehicles", status: "live" },
 
   // --- Construction ---
   { slug: "cement", name: "Cement Calculator", shortDescription: "Bags of cement needed for a project.", category: "construction", status: "soon" },
