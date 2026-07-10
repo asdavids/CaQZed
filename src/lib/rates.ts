@@ -181,3 +181,49 @@ export function solveGrossForNet(targetNet: number): number {
   return (low + high) / 2;
 }
 
+// ---------------------------------------------------------------------------
+// Employment Code Act No. 3 of 2019 — overtime, leave pay
+// Source: §75(3) (overtime), §36-37 and Fifth Schedule (leave pay).
+// Cross-verified across wageindicator.org, Lexology and Mondaq summaries.
+// ---------------------------------------------------------------------------
+export const STANDARD_MONTHLY_HOURS = 208; // monthly wage ÷ 208 = hourly rate
+export const OVERTIME_MULTIPLIER = 1.5; // hours beyond 48/week
+export const REST_DAY_HOLIDAY_MULTIPLIER = 2.0; // work on rest day / public holiday
+export const STATUTORY_ANNUAL_LEAVE_DAYS = 24; // 2 days/month, after 12 months service
+export const LEAVE_PAY_DIVISOR = 26; // Fifth Schedule formula: (Full Pay × Days) ÷ 26
+
+export function calculateHourlyRate(monthlySalary: number): number {
+  return monthlySalary / STANDARD_MONTHLY_HOURS;
+}
+
+export function calculateLeavePay(fullMonthlyPay: number, leaveDays: number): number {
+  return (fullMonthlyPay * leaveDays) / LEAVE_PAY_DIVISOR;
+}
+
+/** Total statutory cost of an employee to the employer, on top of gross pay. */
+export function calculateEmployerCost(grossSalary: number): {
+  napsaEmployer: number;
+  nhimaEmployer: number;
+  skillsLevy: number;
+  totalCost: number;
+} {
+  const napsaEmployer = calculateNAPSA(grossSalary);
+  const nhimaEmployer = calculateNHIMA(grossSalary);
+  const skillsLevy = grossSalary * SKILLS_LEVY_RATE;
+  return {
+    napsaEmployer,
+    nhimaEmployer,
+    skillsLevy,
+    totalCost: grossSalary + napsaEmployer + nhimaEmployer + skillsLevy,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Treasury Bills — withholding tax on interest income
+// Source: multiple confirming sources (Pangaea Securities, Mansa Markets) —
+// 15% withholding tax on Treasury Bill interest for resident individuals.
+// Yields themselves are NOT hardcoded here — BoZ auctions T-bills roughly
+// every two weeks and yields move with each auction, so the calculator asks
+// for the current yield as an input rather than risking a stale rate.
+// ---------------------------------------------------------------------------
+export const TBILL_WITHHOLDING_TAX_RATE = 0.15;

@@ -38,13 +38,13 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "nhima", name: "NHIMA Calculator", shortDescription: "Health insurance contribution on your salary.", category: "salary-employment", status: "live" },
   { slug: "gross-to-net", name: "Gross to Net Salary", shortDescription: "Full payslip breakdown from gross salary.", category: "salary-employment", status: "live" },
   { slug: "net-to-gross", name: "Net to Gross Salary", shortDescription: "Find the gross salary for a target take-home pay.", category: "salary-employment", status: "live" },
-  { slug: "skills-levy", name: "Skills Levy Calculator", shortDescription: "Employer skills development levy.", category: "salary-employment", status: "soon" },
+  { slug: "skills-levy", name: "Skills Levy Calculator", shortDescription: "Employer skills development levy.", category: "salary-employment", status: "live" },
   { slug: "pension", name: "Pension Calculator", shortDescription: "Estimate pension contributions and payout.", category: "salary-employment", status: "soon" },
-  { slug: "employer-cost", name: "Employer Cost Calculator", shortDescription: "True cost of an employee to the business.", category: "salary-employment", status: "soon" },
-  { slug: "overtime", name: "Overtime Calculator", shortDescription: "Overtime pay based on hourly rate.", category: "salary-employment", status: "soon" },
+  { slug: "employer-cost", name: "Employer Cost Calculator", shortDescription: "True cost of an employee to the business.", category: "salary-employment", status: "live" },
+  { slug: "overtime", name: "Overtime Calculator", shortDescription: "Overtime pay based on hourly rate.", category: "salary-employment", status: "live" },
   { slug: "bonus-tax", name: "Bonus Tax Calculator", shortDescription: "Tax impact of a bonus or commission.", category: "salary-employment", status: "soon" },
   { slug: "hourly-wage", name: "Hourly Wage Calculator", shortDescription: "Convert between hourly, daily and annual pay.", category: "salary-employment", status: "live" },
-  { slug: "leave-pay", name: "Leave Pay Calculator", shortDescription: "Leave days payout calculation.", category: "salary-employment", status: "soon" },
+  { slug: "leave-pay", name: "Leave Pay Calculator", shortDescription: "Leave days payout calculation.", category: "salary-employment", status: "live" },
   { slug: "terminal-benefits", name: "Terminal Benefits Calculator", shortDescription: "Gratuity and terminal benefits estimate.", category: "salary-employment", status: "soon" },
 
   // --- Business ---
@@ -62,9 +62,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "loan-affordability", name: "Loan Affordability Calculator", shortDescription: "How much you can safely borrow.", category: "banking-loans", status: "live" },
 
   // --- Investments ---
-  { slug: "treasury-bills", name: "Treasury Bills Calculator", shortDescription: "Returns on Zambian government treasury bills.", category: "investments", status: "soon" },
+  { slug: "treasury-bills", name: "Treasury Bills Calculator", shortDescription: "Returns on Zambian government treasury bills.", category: "investments", status: "live" },
   { slug: "roi", name: "ROI Calculator", shortDescription: "Return on investment, in kwacha and percent.", category: "investments", status: "live" },
-  { slug: "inflation", name: "Inflation Calculator", shortDescription: "What your money is really worth over time.", category: "investments", status: "soon" },
+  { slug: "inflation", name: "Inflation Calculator", shortDescription: "What your money is really worth over time.", category: "investments", status: "live" },
 
   // --- Utilities ---
   { slug: "zesco-bill", name: "ZESCO Bill Estimator", shortDescription: "Estimate your monthly electricity bill.", category: "utilities", status: "live" },
