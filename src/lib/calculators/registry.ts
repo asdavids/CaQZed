@@ -43,7 +43,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "employer-cost", name: "Employer Cost Calculator", shortDescription: "True cost of an employee to the business.", category: "salary-employment", status: "soon" },
   { slug: "overtime", name: "Overtime Calculator", shortDescription: "Overtime pay based on hourly rate.", category: "salary-employment", status: "soon" },
   { slug: "bonus-tax", name: "Bonus Tax Calculator", shortDescription: "Tax impact of a bonus or commission.", category: "salary-employment", status: "soon" },
-  { slug: "hourly-wage", name: "Hourly Wage Calculator", shortDescription: "Convert between hourly, daily and annual pay.", category: "salary-employment", status: "soon" },
+  { slug: "hourly-wage", name: "Hourly Wage Calculator", shortDescription: "Convert between hourly, daily and annual pay.", category: "salary-employment", status: "live" },
   { slug: "leave-pay", name: "Leave Pay Calculator", shortDescription: "Leave days payout calculation.", category: "salary-employment", status: "soon" },
   { slug: "terminal-benefits", name: "Terminal Benefits Calculator", shortDescription: "Gratuity and terminal benefits estimate.", category: "salary-employment", status: "soon" },
 
@@ -80,23 +80,23 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: "running-costs", name: "Running Costs Calculator", shortDescription: "Monthly cost of fuel, road tax, insurance and maintenance.", category: "vehicles", status: "live" },
 
   // --- Construction ---
-  { slug: "cement", name: "Cement Calculator", shortDescription: "Bags of cement needed for a project.", category: "construction", status: "soon" },
-  { slug: "paint", name: "Paint Calculator", shortDescription: "Litres of paint needed by wall area.", category: "construction", status: "soon" },
+  { slug: "cement", name: "Cement Calculator", shortDescription: "Bags of cement needed for a project.", category: "construction", status: "live" },
+  { slug: "paint", name: "Paint Calculator", shortDescription: "Litres of paint needed by wall area.", category: "construction", status: "live" },
 
   // --- Agriculture ---
-  { slug: "fertilizer", name: "Fertilizer Calculator", shortDescription: "Fertilizer quantity by field size.", category: "agriculture", status: "soon" },
-  { slug: "poultry-profit", name: "Poultry Profit Calculator", shortDescription: "Profitability of a poultry batch.", category: "agriculture", status: "soon" },
+  { slug: "fertilizer", name: "Fertilizer Calculator", shortDescription: "Fertilizer quantity by field size.", category: "agriculture", status: "live" },
+  { slug: "poultry-profit", name: "Poultry Profit Calculator", shortDescription: "Profitability of a poultry batch.", category: "agriculture", status: "live" },
 
   // --- Property ---
   { slug: "rental-yield", name: "Rental Yield Calculator", shortDescription: "Annual rental yield on a property.", category: "property", status: "live" },
 
   // --- Personal Finance ---
-  { slug: "budget-planner", name: "Budget Planner", shortDescription: "Plan monthly income against expenses.", category: "personal-finance", status: "soon" },
+  { slug: "budget-planner", name: "Budget Planner", shortDescription: "Plan monthly income against expenses.", category: "personal-finance", status: "live" },
   { slug: "savings-goal", name: "Savings Goal Calculator", shortDescription: "How much to save each month to hit a target.", category: "personal-finance", status: "live" },
-  { slug: "debt-payoff", name: "Debt Payoff Calculator", shortDescription: "Time and interest to clear a debt.", category: "personal-finance", status: "soon" },
+  { slug: "debt-payoff", name: "Debt Payoff Calculator", shortDescription: "Time and interest to clear a debt.", category: "personal-finance", status: "live" },
 
   // --- Education ---
-  { slug: "school-fees-planner", name: "School Fees Planner", shortDescription: "Plan and save for school fees.", category: "education", status: "soon" },
+  { slug: "school-fees-planner", name: "School Fees Planner", shortDescription: "Plan and save for school fees.", category: "education", status: "live" },
 
   // --- Government ---
   { slug: "passport-fees", name: "Passport Fees Calculator", shortDescription: "Zambian passport application costs.", category: "government", status: "soon" },
@@ -104,8 +104,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // --- Everyday ---
   { slug: "percentage", name: "Percentage Calculator", shortDescription: "Percentages, increases and decreases.", category: "everyday", status: "live" },
   { slug: "age", name: "Age Calculator", shortDescription: "Exact age in years, months and days.", category: "everyday", status: "live" },
-  { slug: "date-calculator", name: "Date Calculator", shortDescription: "Days between two dates.", category: "everyday", status: "soon" },
-  { slug: "unit-converter", name: "Unit Converter", shortDescription: "Convert length, weight, volume and more.", category: "everyday", status: "soon" },
+  { slug: "date-calculator", name: "Date Calculator", shortDescription: "Days between two dates.", category: "everyday", status: "live" },
+  { slug: "unit-converter", name: "Unit Converter", shortDescription: "Convert length, weight, volume and more.", category: "everyday", status: "live" },
 ];
 
 export function getLiveCalculators() {
