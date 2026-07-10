@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function BudgetPlannerPage() {
   return (
     <CalculatorShell
+      slug="budget-planner"
       title="Budget Planner"
       description="See how your monthly income stacks up against your expenses, and what's left to save."
       relatedSlugs={["savings-goal", "debt-payoff", "gross-to-net"]}

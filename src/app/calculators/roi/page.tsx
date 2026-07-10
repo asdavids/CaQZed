@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function RoiPage() {
   return (
     <CalculatorShell
+      slug="roi"
       title="ROI Calculator"
       description="Calculate the return on any investment, in both kwacha and percentage terms."
       relatedSlugs={["compound-interest", "treasury-bills", "inflation"]}

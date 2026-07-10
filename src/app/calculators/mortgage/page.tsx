@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function MortgagePage() {
   return (
     <CalculatorShell
+      slug="mortgage"
       title="Mortgage Calculator"
       description="Work out your monthly home loan repayment based on property price, down payment, interest rate and term."
       legalReference="Standard reducing-balance amortisation formula, used by Zambian banks for mortgage lending."

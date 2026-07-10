@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function LoanAffordabilityPage() {
   return (
     <CalculatorShell
+      slug="loan-affordability"
       title="Loan Affordability Calculator"
       description="Estimate how much you can safely borrow, based on your income, existing debt, and a target debt-to-income ratio."
       legalReference="Debt-to-income ratio is a common lending benchmark used by banks worldwide; the default 40% is a widely used guideline, not a fixed Zambian legal limit."

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function CompoundInterestPage() {
   return (
     <CalculatorShell
+      slug="compound-interest"
       title="Compound Interest Calculator"
       description="See how your money grows when interest is earned on interest, not just your original amount."
       legalReference="Standard compound interest formula, used across savings and investment products."

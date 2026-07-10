@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function OvertimePage() {
   return (
     <CalculatorShell
+      slug="overtime"
       title="Overtime Calculator"
       description="Calculate your overtime pay based on the statutory rates in the Employment Code Act."
       legalReference="Employment Code Act No. 3 of 2019, Section 75(3)."

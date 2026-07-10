@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function TreasuryBillsPage() {
   return (
     <CalculatorShell
+      slug="treasury-bills"
       title="Treasury Bills Calculator"
       description="Calculate your net return on a Bank of Zambia Treasury Bill, after withholding tax."
       legalReference="Treasury Bills are issued at a discount by the Bank of Zambia; interest income is subject to 15% withholding tax."

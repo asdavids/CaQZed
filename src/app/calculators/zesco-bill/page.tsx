@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function ZescoPage() {
   return (
     <CalculatorShell
+      slug="zesco-bill"
       title="ZESCO Bill Estimator"
       description="Estimate how much your electricity units will cost using the current residential tariff bands."
       legalReference="Energy Regulation Board (ERB) approved ZESCO residential tariffs."

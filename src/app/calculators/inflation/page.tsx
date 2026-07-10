@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function InflationPage() {
   return (
     <CalculatorShell
+      slug="inflation"
       title="Inflation Calculator"
       description="See how much you'd need in the future to match today's buying power, at a given inflation rate."
       relatedSlugs={["treasury-bills", "savings-goal", "roi"]}

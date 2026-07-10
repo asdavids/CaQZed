@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function UnitConverterPage() {
   return (
     <CalculatorShell
+      slug="unit-converter"
       title="Unit Converter"
       description="Convert between common units of length, weight and volume."
       relatedSlugs={["percentage", "date-calculator", "age"]}

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function NetToGrossPage() {
   return (
     <CalculatorShell
+      slug="net-to-gross"
       title="Net to Gross Salary Calculator"
       description="Enter the take-home pay you want, and find the gross salary you'd need to negotiate for."
       legalReference="Uses the 2026 ZRA PAYE bands, NAPSA and NHIMA rates in reverse."

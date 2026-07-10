@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function PaintPage() {
   return (
     <CalculatorShell
+      slug="paint"
       title="Paint Calculator"
       description="Calculate how much paint you need based on wall area, number of coats, and coverage rate."
       relatedSlugs={["cement", "budget-planner", "unit-converter"]}

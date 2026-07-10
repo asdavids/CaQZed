@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function BreakEvenPage() {
   return (
     <CalculatorShell
+      slug="break-even"
       title="Break-even Calculator"
       description="Find out how many units you need to sell to cover your fixed costs, and start turning a profit."
       relatedSlugs={["profit-margin", "vat", "turnover-tax"]}

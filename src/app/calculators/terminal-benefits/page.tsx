@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function TerminalBenefitsPage() {
   return (
     <CalculatorShell
+      slug="terminal-benefits"
       title="Terminal Benefits Calculator"
       description="Calculate the statutory gratuity owed at the end of a fixed-term employment contract."
       legalReference="Employment Code Act No. 3 of 2019, Section 73."

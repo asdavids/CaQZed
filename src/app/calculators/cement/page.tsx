@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function CementPage() {
   return (
     <CalculatorShell
+      slug="cement"
       title="Cement Calculator"
       description="Work out how many 50kg bags of cement you need for a concrete slab or foundation."
       legalReference="Standard construction industry estimating ratios (cement:sand:stone by volume)."

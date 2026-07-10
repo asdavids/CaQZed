@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function PercentagePage() {
   return (
     <CalculatorShell
+      slug="percentage"
       title="Percentage Calculator"
       description="Work out any percentage calculation instantly."
       relatedSlugs={["vat", "profit-margin", "age"]}

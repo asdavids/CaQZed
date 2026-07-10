@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function NhimaPage() {
   return (
     <CalculatorShell
+      slug="nhima"
       title="NHIMA Calculator"
       description="Work out your National Health Insurance Management Authority contribution."
       legalReference="National Health Insurance Act — administered by NHIMA."

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function PoultryProfitPage() {
   return (
     <CalculatorShell
+      slug="poultry-profit"
       title="Poultry Profit Calculator"
       description="Estimate the profitability of a broiler batch, from day-old chicks to sale."
       relatedSlugs={["fertilizer", "break-even", "budget-planner"]}

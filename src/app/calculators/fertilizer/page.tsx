@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function FertilizerPage() {
   return (
     <CalculatorShell
+      slug="fertilizer"
       title="Fertilizer Calculator"
       description="Calculate the total quantity of fertilizer needed for your field."
       relatedSlugs={["poultry-profit", "budget-planner", "unit-converter"]}

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function CorporateTaxPage() {
   return (
     <CalculatorShell
+      slug="corporate-tax"
       title="Corporate Tax Calculator"
       description="Calculate company income tax based on your business sector's rate."
       legalReference="Income Tax Act, Chapter 323 — standard rate 30%, with reduced rates for specific sectors."

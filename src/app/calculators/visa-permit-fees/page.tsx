@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function VisaPermitFeesPage() {
   return (
     <CalculatorShell
+      slug="visa-permit-fees"
       title="Visa & Permit Fees Calculator"
       description="Look up the official fee for any Zambian visa or immigration permit, including the administrative charge."
       legalReference={`Zambia Department of Immigration official fee schedule. Rates verified ${VISA_PERMIT_RATES_LAST_VERIFIED}.`}

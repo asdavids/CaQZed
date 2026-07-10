@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function RunningCostsPage() {
   return (
     <CalculatorShell
+      slug="running-costs"
       title="Vehicle Running Costs Calculator"
       description="Add up fuel, road tax, insurance and maintenance to see your true monthly cost of running a vehicle."
       legalReference="Combines your fuel usage with the RTSA road tax schedule and your own insurance/maintenance estimates."

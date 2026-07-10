@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function HourlyWagePage() {
   return (
     <CalculatorShell
+      slug="hourly-wage"
       title="Hourly Wage Calculator"
       description="Convert an hourly rate into daily, weekly, monthly and annual pay, or work the other way."
       relatedSlugs={["gross-to-net", "paye", "overtime"]}

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function DebtPayoffPage() {
   return (
     <CalculatorShell
+      slug="debt-payoff"
       title="Debt Payoff Calculator"
       description="See how many months it will take to clear a debt at a fixed monthly payment, and the total interest you'll pay."
       relatedSlugs={["loan", "budget-planner", "loan-affordability"]}

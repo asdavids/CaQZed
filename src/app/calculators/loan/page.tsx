@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function LoanPage() {
   return (
     <CalculatorShell
+      slug="loan"
       title="Loan Repayment Calculator"
       description="Work out your monthly instalment and total interest on any personal loan, SACCO loan, or hire purchase."
       legalReference="Standard reducing-balance amortisation formula, used by most Zambian banks and SACCOs."

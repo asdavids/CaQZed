@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function DateCalculatorPage() {
   return (
     <CalculatorShell
+      slug="date-calculator"
       title="Date Calculator"
       description="Find the number of days between any two dates."
       relatedSlugs={["age", "school-fees-planner", "percentage"]}

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function ImportDutyPage() {
   return (
     <CalculatorShell
+      slug="import-duty"
       title="Vehicle Import Duty Calculator"
       description="Estimate ZRA import duty for cars, pickups, vans, trucks, buses or motorcycles — or switch to Total Landed Cost mode for the full picture."
       legalReference={`ZRA Used Motor Vehicle Specific Duty Schedule (effective 2025). Rates verified ${VEHICLE_RATES_LAST_VERIFIED}.`}

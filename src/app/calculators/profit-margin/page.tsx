@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function ProfitMarginPage() {
   return (
     <CalculatorShell
+      slug="profit-margin"
       title="Profit Margin Calculator"
       description="Calculate your profit margin and markup from cost price and selling price."
       relatedSlugs={["break-even", "vat", "turnover-tax"]}

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function LeavePayPage() {
   return (
     <CalculatorShell
+      slug="leave-pay"
       title="Leave Pay Calculator"
       description="Calculate the value of your accrued annual leave using the Employment Code Act's Fifth Schedule formula."
       legalReference="Employment Code Act No. 3 of 2019, Sections 36-37 and the Fifth Schedule."

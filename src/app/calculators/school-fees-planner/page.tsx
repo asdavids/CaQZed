@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function SchoolFeesPage() {
   return (
     <CalculatorShell
+      slug="school-fees-planner"
       title="School Fees Planner"
       description="Work out how much to save each month to cover the next term's school fees."
       relatedSlugs={["savings-goal", "budget-planner", "date-calculator"]}

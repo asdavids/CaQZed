@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function PensionPage() {
   return (
     <CalculatorShell
+      slug="pension"
       title="Pension Contribution Projection"
       description="Project how much will be paid into your NAPSA pension over your remaining working years."
       legalReference="Based on NAPSA's 10% combined contribution rate (5% employee + 5% employer)."

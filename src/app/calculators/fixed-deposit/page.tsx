@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function FixedDepositPage() {
   return (
     <CalculatorShell
+      slug="fixed-deposit"
       title="Fixed Deposit Calculator"
       description="Work out what your fixed deposit will be worth at maturity."
       legalReference="Simple interest calculation, the common method for fixed-term deposits at Zambian banks."

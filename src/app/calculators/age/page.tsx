@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function AgePage() {
   return (
     <CalculatorShell
+      slug="age"
       title="Age Calculator"
       description="Find the exact age between two dates, down to the day."
       relatedSlugs={["date-calculator", "percentage"]}

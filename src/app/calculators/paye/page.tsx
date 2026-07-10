@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function PayePage() {
   return (
     <CalculatorShell
+      slug="paye"
       title="PAYE Calculator"
       description="Estimate your Pay As You Earn income tax using the 2026 ZRA monthly bands."
       legalReference="Income Tax Act, Chapter 323 of the Laws of Zambia — administered by the Zambia Revenue Authority (ZRA)."

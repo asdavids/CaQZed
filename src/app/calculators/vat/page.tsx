@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function VatPage() {
   return (
     <CalculatorShell
+      slug="vat"
       title="VAT Calculator"
       description="Add or remove Zambia's standard 16% VAT from any price."
       legalReference="Value Added Tax Act, Chapter 331 of the Laws of Zambia — administered by ZRA."

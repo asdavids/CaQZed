@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./container";
+import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
   return (
@@ -29,6 +30,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <Link
             href="/calculators"
             className="rounded-full bg-brand-green px-4 py-2 text-[13px] font-semibold text-white hover:bg-brand-green-700 transition-colors"

@@ -61,9 +61,16 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-border pt-6">
-          <p className="text-[12px] text-foreground-muted">
-            © {new Date().getFullYear()} CaQZed. Figures are estimates for guidance only — always confirm with ZRA, NAPSA, NHIMA or a licensed professional.
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <p className="text-[12px] text-foreground-muted">
+              © {new Date().getFullYear()} CaQZed. Figures are estimates for guidance only — always confirm with ZRA, NAPSA, NHIMA or a licensed professional.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="text-[12px] text-foreground-muted hover:text-brand-green transition-colors">Privacy</Link>
+              <Link href="/terms" className="text-[12px] text-foreground-muted hover:text-brand-green transition-colors">Terms</Link>
+              <Link href="/disclaimer" className="text-[12px] text-foreground-muted hover:text-brand-green transition-colors">Disclaimer</Link>
+            </div>
+          </div>
           <p className="text-[12px] text-foreground-muted">
             Made in Zambia 🇿🇲
           </p>

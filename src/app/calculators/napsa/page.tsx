@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function NapsaPage() {
   return (
     <CalculatorShell
+      slug="napsa"
       title="NAPSA Calculator"
       description="Work out your National Pension Scheme Authority contribution, employee and employer share."
       legalReference="National Pension Scheme Authority Act — administered by NAPSA."

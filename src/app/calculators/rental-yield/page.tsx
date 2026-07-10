@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function RentalYieldPage() {
   return (
     <CalculatorShell
+      slug="rental-yield"
       title="Rental Yield Calculator"
       description="Calculate the gross and net annual rental yield on a property."
       relatedSlugs={["mortgage", "roi", "loan-affordability"]}

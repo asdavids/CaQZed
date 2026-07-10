@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function BonusTaxPage() {
   return (
     <CalculatorShell
+      slug="bonus-tax"
       title="Bonus Tax Calculator"
       description="See how much of your bonus goes to PAYE, and what you'll actually receive."
       legalReference="Uses the 2026 ZRA PAYE bands, applied to salary plus bonus combined."

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function FuelCostPage() {
   return (
     <CalculatorShell
+      slug="fuel-cost"
       title="Fuel Cost Calculator"
       description="Estimate how much fuel a trip will cost, based on distance, your vehicle's consumption, and today's pump price."
       relatedSlugs={["import-duty", "road-tax", "budget-planner"]}

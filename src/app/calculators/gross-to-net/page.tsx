@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function GrossToNetPage() {
   return (
     <CalculatorShell
+      slug="gross-to-net"
       title="Gross to Net Salary Calculator"
       description="See your complete payslip: PAYE, NAPSA and NHIMA deducted, and what actually lands in your account."
       legalReference="Combines ZRA PAYE bands, NAPSA and NHIMA statutory rates for 2026."

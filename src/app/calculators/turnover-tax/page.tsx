@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function TurnoverTaxPage() {
   return (
     <CalculatorShell
+      slug="turnover-tax"
       title="Turnover Tax Calculator"
       description="Estimate turnover tax for small businesses trading below the K5 million annual turnover threshold."
       legalReference="Income Tax Act — turnover tax regime administered by ZRA, 5% rate effective 1 January 2025."

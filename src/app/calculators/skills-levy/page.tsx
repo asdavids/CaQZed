@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function SkillsLevyPage() {
   return (
     <CalculatorShell
+      slug="skills-levy"
       title="Skills Levy Calculator"
       description="Calculate the Skills Development Levy your business owes, based on total payroll."
       legalReference="Skills Development Levy Act — administered by ZRA, 0.5% of payroll."

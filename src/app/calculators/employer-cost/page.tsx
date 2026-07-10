@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function EmployerCostPage() {
   return (
     <CalculatorShell
+      slug="employer-cost"
       title="Employer Cost Calculator"
       description="See the true monthly cost of an employee once statutory employer contributions are added on top of gross salary."
       legalReference="NAPSA Act, National Health Insurance Act, and the Skills Development Levy under the Income Tax Act."

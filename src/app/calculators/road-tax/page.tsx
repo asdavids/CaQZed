@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function RoadTaxPage() {
   return (
     <CalculatorShell
+      slug="road-tax"
       title="Road Tax Calculator"
       description="Calculate your annual RTSA road tax based on your vehicle's gross vehicle weight (GVW)."
       legalReference={`RTSA fee-unit schedule under Statutory Instrument No. 25 of 2024, fee unit value K0.40. Rates verified ${VEHICLE_RATES_LAST_VERIFIED}.`}

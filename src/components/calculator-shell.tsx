@@ -16,6 +16,7 @@ export function CalculatorShell({
   formulaExplanation,
   faqs,
   relatedSlugs = [],
+  slug,
 }: {
   title: string;
   description: string;
@@ -24,13 +25,73 @@ export function CalculatorShell({
   formulaExplanation: React.ReactNode;
   faqs: FAQ[];
   relatedSlugs?: string[];
+  slug?: string;
 }) {
   const related = relatedSlugs
     .map((slug) => CALCULATORS.find((c) => c.slug === slug))
     .filter(Boolean);
 
+  const canonicalUrl = slug ? `https://caqzed.com/calculators/${slug}` : undefined;
+
+  const faqSchema =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }
+      : null;
+
+  const breadcrumbSchema = canonicalUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://caqzed.com" },
+          { "@type": "ListItem", position: 2, name: "Calculators", item: "https://caqzed.com/calculators" },
+          { "@type": "ListItem", position: 3, name: title, item: canonicalUrl },
+        ],
+      }
+    : null;
+
+  const appSchema = canonicalUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: title,
+        url: canonicalUrl,
+        description,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Any",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "ZMW" },
+        isAccessibleForFree: true,
+      }
+    : null;
+
   return (
     <div className="py-10 sm:py-14">
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
+      {appSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+        />
+      )}
       <Container>
         <nav className="text-[13px] text-foreground-muted mb-6">
           <Link href="/" className="hover:text-brand-green">Home</Link>
