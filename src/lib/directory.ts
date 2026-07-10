@@ -19,7 +19,14 @@ export interface DirectoryEntry {
   notes?: string;
 }
 
-export const CAR_AGENTS: DirectoryEntry[] = [
+export const CAR_AGENTS: DirectoryEntry[] = [{
+    name: "David Mumbuna",
+    role: "Import & Clearing Agent",
+    phone: "260961185620",
+    whatsapp: "27784437165",
+    location: "Lusaka",
+    notes: "Handles JEVIC inspection and ZRA clearing.",
+  },
   // Example entry — replace with real agents, or delete this one:
   // {
   //   name: "Jane Banda",
