@@ -31,13 +31,19 @@ export default function Home() {
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-            {["PAYE", "NAPSA", "VAT", "Loan"].map((tag) => (
+            {[
+              { label: "Import Duty", slug: "import-duty" },
+              { label: "PAYE", slug: "paye" },
+              { label: "NAPSA", slug: "napsa" },
+              { label: "VAT", slug: "vat" },
+              { label: "Gross to Net", slug: "gross-to-net" },
+            ].map((tag) => (
               <Link
-                key={tag}
-                href={`/calculators/${tag.toLowerCase()}`}
+                key={tag.slug}
+                href={`/calculators/${tag.slug}`}
                 className="rounded-full border border-border bg-surface px-3.5 py-1.5 text-[13px] font-medium hover:border-brand-green/40 transition-colors"
               >
-                {tag}
+                {tag.label}
               </Link>
             ))}
           </div>
