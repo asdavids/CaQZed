@@ -100,6 +100,103 @@ export function getCarbonSurtax(engineCc: number): number {
   return band ? band.surtax : CARBON_SURTAX_BANDS[CARBON_SURTAX_BANDS.length - 1].surtax;
 }
 
+// ---------------------------------------------------------------------------
+// Goods vehicles — rated by Gross Vehicle Weight (GVW), not engine size.
+// Source: ZRA Used Motor Vehicle Specific Duty Schedule, effective 2025
+// (zra.org.zm/download/used-motor-vehicle-specific-duty-rates-2025).
+// ---------------------------------------------------------------------------
+export type GoodsVehicleType = "singleCab" | "doubleCab" | "panelVan" | "truck";
+
+interface GvwBand {
+  label: string;
+  maxTonnes: number;
+  over5: number;
+  years2to5: number;
+}
+
+export const GOODS_VEHICLE_SCHEDULE: Record<GoodsVehicleType, GvwBand[]> = {
+  singleCab: [
+    { label: "1t – 1.5t GVW", maxTonnes: 1.5, over5: 25_138.6, years2to5: 55_784.3 },
+    { label: "1.5t – 3t GVW", maxTonnes: 3, over5: 41_461.45, years2to5: 66_666.2 },
+    { label: "3t – 5t GVW", maxTonnes: 5, over5: 46_902.4, years2to5: 77_548.1 },
+  ],
+  doubleCab: [
+    { label: "Up to 3t GVW", maxTonnes: 3, over5: 63_225.25, years2to5: 77_548.1 },
+    { label: "3t – 5t GVW", maxTonnes: 5, over5: 69_210.29, years2to5: 85_165.43 },
+  ],
+  panelVan: [
+    { label: "Up to 1t GVW", maxTonnes: 1, over5: 22_309.32, years2to5: 34_510.2 },
+    { label: "1t – 1.5t GVW", maxTonnes: 1.5, over5: 25_138.6, years2to5: 39_461.45 },
+    { label: "1.5t – 3t GVW", maxTonnes: 3, over5: 41_461.45, years2to5: 44_902.4 },
+    { label: "3t – 5t GVW", maxTonnes: 5, over5: 46_902.4, years2to5: 55_784.3 },
+  ],
+  truck: [
+    { label: "Up to 2t GVW", maxTonnes: 2, over5: 25_954.74, years2to5: 50_343.35 },
+    { label: "2t – 5t GVW", maxTonnes: 5, over5: 30_579.55, years2to5: 55_784.3 },
+    { label: "5t – 10t GVW", maxTonnes: 10, over5: 36_020.5, years2to5: 66_666.2 },
+    { label: "10t – 20t GVW", maxTonnes: 20, over5: 44_726.02, years2to5: 77_548.1 },
+    { label: "Over 20t GVW", maxTonnes: Infinity, over5: 52_343.35, years2to5: 88_430.0 },
+  ],
+};
+
+export function calculateGoodsVehicleDuty(
+  vehicleType: GoodsVehicleType,
+  gvwTonnes: number,
+  ageBand: AgeBand
+) {
+  const bands = GOODS_VEHICLE_SCHEDULE[vehicleType];
+  const band = bands.find((b) => gvwTonnes <= b.maxTonnes) ?? bands[bands.length - 1];
+  const specificDuty = band[ageBand];
+  return { specificDuty, bandLabel: band.label };
+}
+
+// ---------------------------------------------------------------------------
+// Buses & coaches — rated by seating capacity.
+// ---------------------------------------------------------------------------
+interface SeatBand {
+  label: string;
+  maxSeats: number;
+  over5: number;
+  years2to5: number;
+}
+
+export const BUS_SCHEDULE: SeatBand[] = [
+  { label: "Up to 14 seats", maxSeats: 14, over5: 36_020.5, years2to5: 66_666.2 },
+  { label: "15 – 32 seats", maxSeats: 32, over5: 38_196.88, years2to5: 99_511.3 },
+  { label: "33 – 44 seats", maxSeats: 44, over5: 52_343.35, years2to5: 219_012.8 },
+  { label: "Over 44 seats", maxSeats: Infinity, over5: 112_193.8, years2to5: 273_422.1 },
+];
+
+export function calculateBusDuty(seats: number, ageBand: AgeBand) {
+  const band = BUS_SCHEDULE.find((b) => seats <= b.maxSeats) ?? BUS_SCHEDULE[BUS_SCHEDULE.length - 1];
+  return { specificDuty: band[ageBand], bandLabel: band.label };
+}
+
+// ---------------------------------------------------------------------------
+// Motorcycles — rated by engine capacity, separate bands from passenger cars.
+// ---------------------------------------------------------------------------
+interface MotoBand {
+  label: string;
+  maxCc: number;
+  over5: number;
+  years2to5: number;
+}
+
+export const MOTORCYCLE_SCHEDULE: MotoBand[] = [
+  { label: "50cc and under", maxCc: 50, over5: 4_049.8, years2to5: 4_275.21 },
+  { label: "51cc – 250cc", maxCc: 250, over5: 4_274.8, years2to5: 5_000.21 },
+  { label: "251cc – 500cc", maxCc: 500, over5: 4_499.8, years2to5: 5_725.21 },
+  { label: "501cc – 800cc", maxCc: 800, over5: 4_724.8, years2to5: 6_450.21 },
+  { label: "Over 800cc", maxCc: Infinity, over5: 6_074.8, years2to5: 12_975.21 },
+];
+
+export function calculateMotorcycleDuty(engineCc: number, ageBand: AgeBand) {
+  const band =
+    MOTORCYCLE_SCHEDULE.find((b) => engineCc <= b.maxCc) ??
+    MOTORCYCLE_SCHEDULE[MOTORCYCLE_SCHEDULE.length - 1];
+  return { specificDuty: band[ageBand], bandLabel: band.label };
+}
+
 export function calculateImportDuty(
   engineCc: number,
   bodyType: BodyType,
