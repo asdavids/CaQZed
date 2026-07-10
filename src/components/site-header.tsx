@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./container";
 
 export function SiteHeader() {
@@ -6,9 +7,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-green text-white font-display font-semibold text-sm">
-            Cz
-          </span>
+          <Image src="/logo-mark.png" alt="CaQZed" width={32} height={32} className="h-8 w-8" priority />
           <span className="font-display text-[17px] font-semibold tracking-tight">
             CaQZed
           </span>

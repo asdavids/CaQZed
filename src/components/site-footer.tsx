@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./container";
 import { CATEGORIES } from "@/lib/calculators/registry";
 
@@ -9,9 +10,7 @@ export function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-green text-white font-display font-semibold text-xs">
-                Cz
-              </span>
+              <Image src="/logo-mark.png" alt="CaQZed" width={28} height={28} className="h-7 w-7" />
               <span className="font-display text-[15px] font-semibold">CaQZed</span>
             </div>
             <p className="mt-3 text-[13px] leading-relaxed text-foreground-muted max-w-[220px]">
