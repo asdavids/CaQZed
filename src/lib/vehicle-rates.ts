@@ -112,6 +112,30 @@ export function calculateImportDuty(
 }
 
 // ---------------------------------------------------------------------------
+// Ad valorem duty — used instead of the specific duty schedule for vehicles
+// under 2 years old, and for hybrid/electric vehicles of any age, since the
+// flat specific-duty schedule above does not apply to them.
+// Source: ZRA Motor Vehicle Tax Calculator methodology — 25% customs duty on
+// CIF value, 30% excise duty on the resulting excisable value, 16% VAT on
+// the resulting vatable value (each duty cascades onto the value including
+// the previous one). Cross-verified against a ZRA worked example.
+// ---------------------------------------------------------------------------
+export const AD_VALOREM_CUSTOMS_RATE = 0.25;
+export const AD_VALOREM_EXCISE_RATE = 0.3;
+export const AD_VALOREM_VAT_RATE = 0.16;
+
+export function calculateAdValoremDuty(cifValueZmw: number, engineCc: number) {
+  const customsDuty = cifValueZmw * AD_VALOREM_CUSTOMS_RATE;
+  const excisableValue = cifValueZmw + customsDuty;
+  const exciseDuty = excisableValue * AD_VALOREM_EXCISE_RATE;
+  const vatableValue = excisableValue + exciseDuty;
+  const vat = vatableValue * AD_VALOREM_VAT_RATE;
+  const carbonSurtax = getCarbonSurtax(engineCc);
+  const total = customsDuty + exciseDuty + vat + carbonSurtax;
+  return { customsDuty, exciseDuty, vat, carbonSurtax, total };
+}
+
+// ---------------------------------------------------------------------------
 // Road tax — RTSA fee-unit schedule, SI No. 25 of 2024, fee unit = K0.40
 // ---------------------------------------------------------------------------
 export const ROAD_TAX_FEE_UNIT_VALUE = 0.4;

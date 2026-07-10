@@ -14,7 +14,7 @@ export default function ImportDutyPage() {
   return (
     <CalculatorShell
       title="Vehicle Import Duty Calculator"
-      description="Estimate ZRA specific duty and carbon emission surtax for a used vehicle, by engine size, body type and age."
+      description="Estimate ZRA specific duty and carbon emission surtax, or switch to Total Landed Cost mode to see everything: purchase price, duty, JEVIC, clearing, and RTSA fees."
       legalReference={`ZRA Used Motor Vehicle Specific Duty Schedule (effective 2025). Rates verified ${VEHICLE_RATES_LAST_VERIFIED}.`}
       relatedSlugs={["road-tax", "running-costs", "fuel-cost"]}
       formulaExplanation={
@@ -29,18 +29,33 @@ export default function ImportDutyPage() {
           <p className="font-mono text-[13px] bg-surface-muted rounded-lg px-3 py-2">
             Total duty = Specific duty (by cc, body type, age) + Carbon surtax (by cc)
           </p>
+          <p>
+            <strong>Total Landed Cost mode</strong> goes further: it converts
+            your USD purchase price to Kwacha at today&apos;s exchange rate,
+            adds the ZRA duty above, then adds the other real costs of
+            importing — JEVIC inspection, clearing agent, port handling,
+            transport, RTSA fitness and registration, road tax, and
+            insurance. Those extra costs vary by agent and route, so they're
+            editable estimates, not fixed government rates — adjust them to
+            match your own quotes for a more precise total.
+          </p>
         </>
       }
       faqs={[
         {
           question: "Does this include shipping, clearing agent fees, or JEVIC inspection?",
           answer:
-            "No — this is the ZRA duty only. Shipping/freight, clearing agent fees, JEVIC roadworthiness inspection, and Interpol clearance are separate costs on top of this.",
+            "The ZRA Duty Only mode doesn't — that's ZRA duty alone. Switch to Total Landed Cost mode to include shipping (via your CIF price), JEVIC, clearing agent, port charges, transport, and RTSA fees all in one total.",
+        },
+        {
+          question: "What if my clearing agent quotes a different fee?",
+          answer:
+            "Every additional cost field in Total Landed Cost mode is editable — replace the default estimate with your actual quote for a more accurate total.",
         },
         {
           question: "What about newer vehicles, hybrids or electric cars?",
           answer:
-            "Vehicles under 2 years old, and hybrid or electric vehicles, are assessed differently — as a percentage of the vehicle's CIF (cost, insurance, freight) value rather than the flat specific duty schedule. Confirm the exact calculation with ZRA or a clearing agent.",
+            "Switch to the \"Hybrid / Electric\" toggle above — it's built in. Instead of the flat specific duty schedule, it calculates 25% customs duty on your vehicle's CIF value, then 30% excise duty on that total, then 16% VAT on top of that, plus the same carbon emission surtax. This ad valorem method also applies to vehicles under 2 years old.",
         },
         {
           question: "Why does an SUV cost more than a sedan with the same engine?",
