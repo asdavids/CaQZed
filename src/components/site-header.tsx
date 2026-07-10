@@ -18,6 +18,9 @@ export function SiteHeader() {
           <Link href="/calculators" className="hover:text-foreground transition-colors">
             All Calculators
           </Link>
+          <Link href="/directory" className="hover:text-foreground transition-colors">
+            Agents &amp; Drivers
+          </Link>
           <Link href="/#categories" className="hover:text-foreground transition-colors">
             Categories
           </Link>
