@@ -227,3 +227,26 @@ export function calculateEmployerCost(grossSalary: number): {
 // for the current yield as an input rather than risking a stale rate.
 // ---------------------------------------------------------------------------
 export const TBILL_WITHHOLDING_TAX_RATE = 0.15;
+
+// ---------------------------------------------------------------------------
+// Corporate Income Tax — sector-specific rates
+// Source: PwC Worldwide Tax Summaries, "Zambia — Corporate — Taxes on
+// corporate income" and "Significant developments", reviewed 2026.
+// ---------------------------------------------------------------------------
+export const CORPORATE_TAX_RATES = {
+  standard: { label: "Standard (most businesses)", rate: 0.3 },
+  farming: { label: "Farming / agro-processing", rate: 0.1 },
+  telecom: { label: "Telecommunications", rate: 0.35 },
+} as const;
+
+// ---------------------------------------------------------------------------
+// Gratuity — Employment Code Act No. 3 of 2019, Section 73
+// Statutory minimum 25% of basic pay earned during a long-term (fixed-term,
+// over 12 months) contract. Cross-verified against the Act text, Ministry of
+// Labour FAQ, and multiple legal summaries (Paul Hastings, Mondaq).
+// NOTE: tax treatment of gratuity is disputed between sources — some treat
+// the statutory 25% as tax-favoured, others say it's fully taxed as normal
+// income. This calculator states the gratuity amount only and does not take
+// a position on its tax treatment — confirm with ZRA or your employer.
+// ---------------------------------------------------------------------------
+export const STATUTORY_GRATUITY_RATE = 0.25;
