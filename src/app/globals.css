@@ -62,3 +62,41 @@ body {
   outline: 2px solid var(--brand-gold);
   outline-offset: 2px;
 }
+
+/* Blog prose content */
+.prose-content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  color: var(--foreground);
+}
+.prose-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--foreground-muted);
+  margin-top: 12px;
+}
+.prose-content ul {
+  margin-top: 12px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.prose-content li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--foreground-muted);
+  margin-top: 4px;
+}
+.prose-content strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose-content a {
+  color: var(--brand-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-content a:hover {
+  color: var(--brand-green-700);
+}
