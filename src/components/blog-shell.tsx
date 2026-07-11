@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "./container";
 import { CALCULATORS } from "@/lib/calculators/registry";
 import type { BlogPost } from "@/lib/blog/registry";
+import { BackButton } from "./back-button";
 
 export function BlogShell({
   post,
@@ -41,6 +42,9 @@ export function BlogShell({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Container>
+        <div className="flex items-center justify-between mb-4">
+          <BackButton />
+        </div>
         <nav className="text-[13px] text-foreground-muted mb-6">
           <Link href="/" className="hover:text-brand-green">Home</Link>
           <span className="mx-1.5">/</span>

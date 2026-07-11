@@ -5,7 +5,7 @@ import { CalculatorSearch } from "@/components/calculator-search";
 import { CATEGORIES, getLiveCalculators, getCalculatorsByCategory } from "@/lib/calculators/registry";
 
 export default function Home() {
-  const live = getLiveCalculators();
+  const live = getLiveCalculators().filter((c) => c.slug !== "import-duty");
 
   return (
     <>
@@ -32,7 +32,6 @@ export default function Home() {
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
             {[
-              { label: "Import Duty", slug: "import-duty" },
               { label: "PAYE", slug: "paye" },
               { label: "NAPSA", slug: "napsa" },
               { label: "VAT", slug: "vat" },
@@ -46,6 +45,59 @@ export default function Home() {
                 {tag.label}
               </Link>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Import Duty Feature Banner */}
+      <section className="border-b border-border bg-[#00853F]">
+        <Container className="py-10 sm:py-12">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white uppercase tracking-wide">
+                Most popular
+              </span>
+              <h2 className="mt-3 font-display text-[22px] sm:text-[28px] font-semibold text-white leading-snug">
+                Vehicle Import Duty Calculator
+              </h2>
+              <p className="mt-2 text-[14px] sm:text-[15px] text-white/75 leading-relaxed">
+                Calculate ZRA duty for cars, pickups, trucks, buses and motorcycles.
+                Switch to Total Landed Cost mode to get the full picture — purchase price,
+                duty, JEVIC, clearing agent, port charges and RTSA fees in one total.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/calculators/import-duty"
+                  className="rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-brand-green hover:bg-brand-green-50 transition-colors"
+                >
+                  Calculate import duty →
+                </Link>
+                <Link
+                  href="/blog/importing-a-car-zambia-complete-guide"
+                  className="rounded-full border border-white/30 px-5 py-2.5 text-[14px] font-medium text-white hover:bg-white/10 transition-colors"
+                >
+                  Read the import guide
+                </Link>
+              </div>
+            </div>
+
+            <div className="hidden sm:flex flex-col gap-2 shrink-0">
+              {[
+                { label: "Passenger cars", note: "sedan, hatch, SUV, wagon" },
+                { label: "Goods vehicles", note: "pickup, van, truck" },
+                { label: "Buses", note: "by seating capacity" },
+                { label: "Motorcycles", note: "by engine size" },
+                { label: "Hybrid / Electric", note: "ad valorem method" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 text-brand-gold shrink-0" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8l4 4 6-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="text-[13px] text-white font-medium">{item.label}</span>
+                  <span className="text-[12px] text-white/55">{item.note}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

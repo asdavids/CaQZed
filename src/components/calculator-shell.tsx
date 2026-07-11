@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "./container";
 import { getCalculator, CALCULATORS } from "@/lib/calculators/registry";
 import { RATES_LAST_VERIFIED } from "@/lib/rates";
+import { BackButton } from "./back-button";
 
 interface FAQ {
   question: string;
@@ -93,6 +94,9 @@ export function CalculatorShell({
         />
       )}
       <Container>
+        <div className="flex items-center justify-between mb-4">
+          <BackButton />
+        </div>
         <nav className="text-[13px] text-foreground-muted mb-6">
           <Link href="/" className="hover:text-brand-green">Home</Link>
           <span className="mx-1.5">/</span>
