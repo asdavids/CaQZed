@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CALCULATORS } from "@/lib/calculators/registry";
-import { BLOG_POSTS } from "@/lib/blog";
+import { BLOG_POSTS } from "@/lib/blog/registry";
 
 const BASE_URL = "https://caqzed.com";
 
@@ -28,8 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.publishedAt),
     changeFrequency: "monthly" as const,
-    lastModified: new Date(p.date),
     priority: 0.7,
   }));
 
